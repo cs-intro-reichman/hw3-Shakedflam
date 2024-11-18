@@ -22,7 +22,7 @@ public class Algebra {
 		System.out.println(sqrt(263169));
    		System.out.println(sqrt(76123));
 	}  
-
+int a=1;
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
 		// Replace the following statement with your code
