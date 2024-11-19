@@ -22,29 +22,46 @@ public class Algebra {
 		System.out.println(sqrt(263169));
    		System.out.println(sqrt(76123));
 	}  
-int a=1;
+
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int sum=x1;
+		for (int i=0;i<x2;i++){
+			sum++;
+		}
+		return sum;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int reduction=x1;
+		for(int i=0;i<x2;i++){
+			reduction--;
+		}
+		return reduction;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-        // Replace the following statement with your code
-		return 0;
+		int timesResult=0;
+        for (int i=0;i<x2;i++){
+			timesResult=plus(timesResult, x1);
+		}
+		return timesResult;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int powResult=x;
+		if (n==0){
+			return 1;
+		}else {
+			for (int i=1;i<n;i++){
+				powResult=times(powResult, x);
+			}
+			return powResult;
+		}
+		
 	}
 
 	// Returns the integer part of x1 / x2 
