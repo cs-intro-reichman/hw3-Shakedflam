@@ -90,6 +90,15 @@ public class Algebra {
 			}
 			return powResult;
 	}
+	public static int timesByMinusOne(int x){
+		int num=x;
+		if (num>0){
+			num= minus(num, times(x, 2));
+			return num;
+		}
+		num=minus(x, times(x, 2));
+		return num;
+	}
 
 	public static int div(int x1, int x2) {
 	 int repitation=0;
@@ -99,10 +108,10 @@ public class Algebra {
 		return 1;
 	  }
 	  if (firstNum<0){
-		firstNum=times(firstNum, -1);
+		firstNum=timesByMinusOne(firstNum);
 	  }
 	  if (secondNum<0){
-		secondNum=times(secondNum, -1);
+		secondNum=timesByMinusOne(secondNum);
 	  }
 	   if( firstNum < secondNum){
 		return 0;
@@ -112,17 +121,20 @@ public class Algebra {
 			repitation++;
 		}
 	  }
-	  if (( firstNum>0 && secondNum>0 ) || ( firstNum<0 && secondNum<0)){
+	  if (( firstNum>=0 && secondNum>=0 ) || ( firstNum<=0 && secondNum<=0)){
 		return repitation;
 	  }
-	  return times(repitation, -1);
+	  return timesByMinusOne(repitation);
 	}
 
 	public static int mod(int x1, int x2) {
-        int divideResult=div(x1,x2);
-		divideResult*=x2;
-		x1-=divideResult;
-		return x1;
+        int number=x1;
+		int reminder=0;
+		int divider=x2;
+		int division=div(x1, x2);
+		division=times(division, x2);
+		reminder=minus(number, division);
+		return reminder;
 	}	
 
 	public static int sqrt(int x) {
