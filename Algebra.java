@@ -15,6 +15,7 @@ public class Algebra {
    		System.out.println(sqrt(36));
 		System.out.println(sqrt(263169));
    		System.out.println(sqrt(76123));
+		System.out.println(timesByMinusOne(-120));
 	}  
 
 	public static int plus(int x1, int x2) {
@@ -77,7 +78,7 @@ public class Algebra {
 	public static int pow(int x, int n) {
 		int powResult=x;
 		if (x<0){
-			powResult=times(x, -1);
+			powResult=timesByMinusOne(x);
 		}
 		if (n==0){
 			return 1;
@@ -86,7 +87,7 @@ public class Algebra {
 				powResult=times(powResult, x);
 			}
 			if (x<0 && mod(n, 2)!=0){
-			return times(powResult, -1);
+			return timesByMinusOne(powResult);
 			}
 			return powResult;
 	}
@@ -121,7 +122,7 @@ public class Algebra {
 			repitation++;
 		}
 	  }
-	  if (( firstNum>=0 && secondNum>=0 ) || ( firstNum<=0 && secondNum<=0)){
+	  if (( x1>=0 && x2>=0 ) || ( x1<=0 && x2<=0)){
 		return repitation;
 	  }
 	  return timesByMinusOne(repitation);
