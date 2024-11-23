@@ -61,7 +61,6 @@ public class Algebra {
 			}
 			return powResult;
 		}
-		
 	}
 
 	// Returns the integer part of x1 / x2 
@@ -90,20 +89,16 @@ public class Algebra {
 
 	// Returns the integer part of sqrt(x) //76123
 	public static int sqrt(int x) {
-		if (x==1||x==0){
+		if (x<0){
+			return -1;
+		}
+		if (x==0){
 			return 0;
 		}
-		int highNUmber=x;
-		int lowNumber=1;
-		int midlleOfHighLowNmbers=div(plus(highNUmber, lowNumber),2 );
-		while(minus(pow(midlleOfHighLowNmbers, 2),x)>1||minus(pow(midlleOfHighLowNmbers, 2),x)<(-1)){//I would hav used Math.abs but I don't think that we are allowed to in this mission
-			if(pow(midlleOfHighLowNmbers, 2)>x){
-				highNUmber=midlleOfHighLowNmbers;   
-			}else{
-				lowNumber=midlleOfHighLowNmbers;
-			}
-			    midlleOfHighLowNmbers=div(plus(highNUmber, lowNumber), 2);			
+		int result=1;
+		while (times(result, result)<=x){
+			result++;
 		}
-		return midlleOfHighLowNmbers;
+		return minus(result, 1);
 	}	  	  
 }
