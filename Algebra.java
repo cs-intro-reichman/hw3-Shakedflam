@@ -43,11 +43,16 @@ public class Algebra {
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
+<<<<<<< HEAD
 		int timesResult=0;
         for (int i=0;i<x2;i++){
 			timesResult=plus(timesResult, x1);
 		}
 		return timesResult;
+=======
+		// Replace the following statement with your code
+		return 0;
+>>>>>>> upstream/main
 	}
 
 	// Returns x^n (for n >= 0)
@@ -65,9 +70,13 @@ public class Algebra {
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
+<<<<<<< HEAD
       if(x1==x2){
 		return 1;
 	  }else if(x1<x2){
+=======
+		// Replace the following statement with your code
+>>>>>>> upstream/main
 		return 0;
 	  }else{
 		int repitation=0; 
@@ -81,14 +90,20 @@ public class Algebra {
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
+<<<<<<< HEAD
         int divideResult=div(x1,x2);
 		divideResult*=x2;
 		x1-=divideResult;
 		return x1;
+=======
+		// Replace the following statement with your code
+		return 0;
+>>>>>>> upstream/main
 	}	
 
 	// Returns the integer part of sqrt(x) //76123
 	public static int sqrt(int x) {
+<<<<<<< HEAD
 		if (x<0){
 			return -1;
 		}
@@ -100,5 +115,9 @@ public class Algebra {
 			result++;
 		}
 		return minus(result, 1);
+=======
+		// Replace the following statement with your code
+		return 0;
+>>>>>>> upstream/main
 	}	  	  
 }
