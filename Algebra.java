@@ -1,11 +1,5 @@
-// Implements algebraic operations and the square root function without using 
-// the Java operations a + b, a - b, a * b, a / b, a % b, and without calling 
-// Math.sqrt. All the functions in this class operate on int values and
-// return int values.
-
 public class Algebra {
 	public static void main(String args[]) {
-	    // Tests some of the operations
 	    System.out.println(plus(2,3));   // 2 + 3
 	    System.out.println(minus(7,2));  // 7 - 2
    		System.out.println(minus(2,7));  // 2 - 7
@@ -23,7 +17,6 @@ public class Algebra {
    		System.out.println(sqrt(76123));
 	}  
 
-	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
 		int sum=x1;
 		for (int i=0;i<x2;i++){
@@ -32,7 +25,6 @@ public class Algebra {
 		return sum;
 	}
 
-	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		int reduction=x1;
 		for(int i=0;i<x2;i++){
@@ -41,21 +33,14 @@ public class Algebra {
 		return reduction;
 	}
 
-	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-<<<<<<< HEAD
 		int timesResult=0;
         for (int i=0;i<x2;i++){
 			timesResult=plus(timesResult, x1);
 		}
 		return timesResult;
-=======
-		// Replace the following statement with your code
-		return 0;
->>>>>>> upstream/main
 	}
 
-	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
 		int powResult=x;
 		if (n==0){
@@ -68,19 +53,14 @@ public class Algebra {
 		}
 	}
 
-	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-<<<<<<< HEAD
       if(x1==x2){
 		return 1;
-	  }else if(x1<x2){
-=======
-		// Replace the following statement with your code
->>>>>>> upstream/main
+	  }else if( x1 < x2){
 		return 0;
 	  }else{
 		int repitation=0; 
-		while (x1>=x2){
+		while (x1 >= x2){
 			x1=minus(x1, x2);
 			repitation++;
 		}
@@ -88,22 +68,14 @@ public class Algebra {
 	  }
 	}
 
-	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-<<<<<<< HEAD
         int divideResult=div(x1,x2);
 		divideResult*=x2;
 		x1-=divideResult;
 		return x1;
-=======
-		// Replace the following statement with your code
-		return 0;
->>>>>>> upstream/main
 	}	
 
-	// Returns the integer part of sqrt(x) //76123
 	public static int sqrt(int x) {
-<<<<<<< HEAD
 		if (x<0){
 			return -1;
 		}
@@ -115,9 +87,5 @@ public class Algebra {
 			result++;
 		}
 		return minus(result, 1);
-=======
-		// Replace the following statement with your code
-		return 0;
->>>>>>> upstream/main
 	}	  	  
 }
