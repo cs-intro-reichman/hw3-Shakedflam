@@ -66,19 +66,44 @@ public class Algebra {
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-        // Replace the following statement with your code
+      if(x1==x2){
+		return 1;
+	  }else if(x1<x2){
 		return 0;
+	  }else{
+		int repitation=0; 
+		while (x1>=x2){
+			x1=minus(x1, x2);
+			repitation++;
+		}
+		return repitation;
+	  }
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-        // Replace the following statement with your code
-		return 0;
+        int divideResult=div(x1,x2);
+		divideResult*=x2;
+		x1-=divideResult;
+		return x1;
 	}	
 
-	// Returns the integer part of sqrt(x) 
+	// Returns the integer part of sqrt(x) //76123
 	public static int sqrt(int x) {
-        // Replace the following statement with your code
-		return 0;
+		if (x==1||x==0){
+			return 0;
+		}
+		int highNUmber=x;
+		int lowNumber=1;
+		int midlleOfHighLowNmbers=div(plus(highNUmber, lowNumber),2 );
+		while(minus(pow(midlleOfHighLowNmbers, 2),x)>1||minus(pow(midlleOfHighLowNmbers, 2),x)<(-1)){//I would hav used Math.abs but I don't think that we are allowed to in this mission
+			if(pow(midlleOfHighLowNmbers, 2)>x){
+				highNUmber=midlleOfHighLowNmbers;   
+			}else{
+				lowNumber=midlleOfHighLowNmbers;
+			}
+			    midlleOfHighLowNmbers=div(plus(highNUmber, lowNumber), 2);			
+		}
+		return midlleOfHighLowNmbers;
 	}	  	  
 }
