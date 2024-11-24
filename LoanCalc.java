@@ -82,7 +82,7 @@ public class LoanCalc {
 		while ((highAmount-lowAmount)>epsilon){
 			iterationCounter++;
 			double balance=endBalance(loan, rate, n, periodPayment);
-			if (balance*endBalance(loan, rate, n, lowAmount)>0){
+			if (balance>0){
 				lowAmount=periodPayment;
 			}else{
 				highAmount=periodPayment;
