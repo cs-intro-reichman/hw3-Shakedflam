@@ -37,6 +37,9 @@ public class Anagram {
 		for (int i=0;i<length;i++){
 			int noMatch=0;
 			char atI=firstStr.charAt(i);
+			if (atI==32){
+				continue;
+			}
 			for (int j=0; j<length;j++){
 				char atJ=secondStr.charAt(j);
 				if (atI!=atJ){
@@ -53,6 +56,9 @@ public class Anagram {
 		for (int i=0; i<length;i++){
 			int noMatch=0;
 			char atI=secondStr.charAt(i);
+			if (atI==32){
+				continue;
+			}
 			for (int j=0;j<length;j++){
 				char atJ=firstStr.charAt(j);
 				if (atJ!=atI){
@@ -75,7 +81,7 @@ public class Anagram {
 		String lowerCases= str.toLowerCase();
 		String newString="";
 		for (int i=0;i<str.length();i++){
-			if(((lowerCases.charAt(i)>=97 && lowerCases.length()<=122) || (lowerCases.charAt(i)>=48 && lowerCases.charAt(i)<=57)) ){
+			if(((lowerCases.charAt(i)>=97 && lowerCases.length()<=122) || (lowerCases.charAt(i)>=48 && lowerCases.charAt(i)<=57)) || lowerCases.charAt(i)==32 ){
 				newString="" +newString+lowerCases.charAt(i);
 			}else{
 
